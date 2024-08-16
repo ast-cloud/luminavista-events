@@ -3,7 +3,7 @@ import { Box, Button, Card, CardContent, CardMedia, CircularProgress, Divider, G
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import ContactUsSection from "../components/ContactUsSection";
+// import ContactUsSection from "../components/ContactUsSection";
 // import WhiteDownArrow from '/whiteDownArrow.svg';
 
 const monthNames = [
