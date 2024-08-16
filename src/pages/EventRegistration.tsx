@@ -1,27 +1,28 @@
-import { Alert, Box, Button, Checkbox, Divider, FormControlLabel, Link, MenuItem, Snackbar, TextField, Typography } from "@mui/material";
-import { useState } from "react";
+import { Alert, Box, Button, Checkbox, CircularProgress, Divider, FormControlLabel, Link, MenuItem, Snackbar, TextField, Typography } from "@mui/material";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+const monthNames = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+];
+
 export default function EventRegistration(){
+
+    const {id, datetime} = useParams();
+
     return (
         <Box sx={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'flex-start', gap:5, my:10}}> 
-            <RegistrationForm/>
-            <Box sx={{display:'flex', flexDirection:'column', p:2, width:'20vw', border:'1px solid black'}}>
-                <Typography variant="h6">Study In Australia @ Lumina Vista</Typography>
-                <Divider sx={{my:2}}/>
-                <Typography fontSize={'15px'}>11 Aug 2024, 5:00 pm – 6:00 pm</Typography>
-                <Typography fontSize={'15px'}>GMT+9:30</Typography>
-                <Typography fontSize={'15px'}>Webinar</Typography>
-            </Box>
+            <RegistrationForm id={id} datetime={datetime}/>
+            <EventDetailBox id={id} datetime={datetime}/>
         </Box>
     );
 }
 
-function RegistrationForm(){
+function RegistrationForm({id, datetime}){
 
     const [agreeToWebinarPolicy, setAgreeToWebinarPolicy] = useState(false);
-
-    const {id, datetime} = useParams();
 
     const [formData, setFormData] = useState({
         firstName:'',
@@ -161,5 +162,42 @@ function RegistrationForm(){
                 </Alert>
             </Snackbar>
         </>
+    );
+}
+
+function EventDetailBox({id, datetime}){
+
+    const [eventDetails, setEventDetails] = useState<any>(undefined);
+
+    useEffect(()=>{
+        const fetchEventDetails = async ()=>{
+            let eventData = await axios.get('https://lv.aastikyadav.com/event/'+id);
+            if(eventData.status==200){
+                setEventDetails(eventData.data.event);
+            }
+            else{
+                setEventDetails(null);
+            }
+        }
+        fetchEventDetails();
+
+    },[]);
+    
+    if(eventDetails===undefined){
+        return <div style={{display:'flex', justifyContent:'center', alignItems:'center', height:'20vh'}}>
+        <CircularProgress sx={{color:'black'}}/>
+      </div>
+    }
+
+    let formattedDatetime = ''+(datetime.slice(0,2))+' '+(monthNames[parseInt(datetime.slice(2,4))])+' '+datetime.slice(4,8)+', '+ datetime.slice(8,10)+':'+datetime.slice(10,12)+' - '+datetime.slice(12,14)+':'+datetime.slice(14,16);
+
+    return (
+        <Box sx={{display:'flex', flexDirection:'column', p:2, width:'20vw', border:'1px solid black'}}>
+            <Typography variant="h6">{eventDetails.eventName} @ Lumina Vista</Typography>
+            <Divider sx={{my:2}}/>
+            <Typography fontSize={'15px'}>{formattedDatetime}</Typography>
+            <Typography fontSize={'15px'}>GMT+9:30</Typography>
+            <Typography fontSize={'15px'}>Webinar</Typography>
+        </Box>
     );
 }
