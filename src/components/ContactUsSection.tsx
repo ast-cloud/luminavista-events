@@ -1,5 +1,5 @@
 import { Add } from "@mui/icons-material";
-import { Box, Button, Checkbox, FormControlLabel, MenuItem, TextField, Typography } from "@mui/material";
+import { Box, Button, Checkbox, FormControlLabel, Link, MenuItem, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 
 export default function ContactUsSection(props:any){
@@ -57,10 +57,10 @@ export default function ContactUsSection(props:any){
         <Box ref={props.reference} sx={{display:'flex', flexDirection:'column', mx:'4vw', mb:5, border:'0px solid red'}}>
             <Typography fontSize={'50px'} color={'#265D6B'} mb={'4vw'} lineHeight={1} sx={{fontWeight:2}}>Contact Us</Typography>
             
-            <Box sx={{display:'flex', flexDirection:{xs:'column', md:'row'}, alignItems:'center', height:{xs:'auto',md:'82vh'}, width:'100%', gap:2, border:'0px solid red'}}>
+            <Box sx={{display:'flex', flexDirection:{xs:'column', md:'row'}, alignItems:'start', height:{xs:'auto',md:'82vh'}, width:'100%', gap:2, border:'0px solid red'}}>
                 <Box component='form' height={'auto'} width={{xs:'90%', md:'50%'}} sx={{display:'flex', flexDirection:'column', flexBasis:'6', order:{xs:2, md:1}}}>
                     <Box sx={{display:'flex', flexDirection:{xs:'column', sm:'row'}, width:'100%', gap:2, mb:2, border:'0px solid red'}}>
-                        <TextField id='name' label='Full name *' name="name" value={formData.name} onChange={handleChange} error={!!formErrors.name} helperText={formErrors.name} size="small" fullWidth sx={{'& .MuiOutlinedInput-root':{borderRadius:'8px', '& fieldset':{borderColor:'black'}}}}/>
+                        <TextField id='name' label='Full name *' name="name" value={formData.name} onChange={handleChange} error={!!formErrors.name} helperText={formErrors.name} size="small" fullWidth sx={{fontSize:'60px', '& .MuiOutlinedInput-root':{borderRadius:'8px', '& fieldset':{borderColor:'black'}}}}/>
                         <TextField id='email' label='Email *' name="email" value={formData.email} onChange={handleChange} error={!!formErrors.email} helperText={formErrors.email} size="small" fullWidth sx={{'& .MuiOutlinedInput-root':{borderRadius:'8px', '& fieldset':{borderColor:'black'}}}}/>
                     </Box>
                     <Box sx={{display:'flex', flexDirection:{xs:'column', sm:'row'}, gap:2, mb:2}}>
@@ -93,7 +93,7 @@ export default function ContactUsSection(props:any){
 
                     <TextField label='Message' name="message" value={formData.message} onChange={handleChange} helperText='Write your message here' multiline minRows={4} sx={{mb:2, '& .MuiOutlinedInput-root':{borderRadius:'8px', '& fieldset':{borderColor:'black'}}}}/>
 
-                    <FormControlLabel control={<Checkbox size="small" checked={agreeToTerms}  onChange={(e) => setAgreeToTerms(e.target.checked)}/>} label='Agree to Terms and Privacy policy'/>
+                    <FormControlLabel control={<Checkbox size="small" checked={agreeToTerms}  onChange={(e) => setAgreeToTerms(e.target.checked)}/>} label={<Typography>Agree to <Link  href='https://www.lvmentor.com/terms-and-conditions'>Terms and Privacy policy</Link></Typography>}/>
                     <FormControlLabel control={<Checkbox size="small"/>} label='Subscribe to our newsletter and marketing materials'/>
 
                     <Box sx={{display:'flex', flexDirection:'row', justifyContent:'space-between', mt:2, border:'0px solid red'}}>

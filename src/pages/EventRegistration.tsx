@@ -1,4 +1,4 @@
-import { Alert, Box, Button, Checkbox, Divider, FormControlLabel, MenuItem, Snackbar, TextField, Typography } from "@mui/material";
+import { Alert, Box, Button, Checkbox, Divider, FormControlLabel, Link, MenuItem, Snackbar, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 
@@ -152,7 +152,7 @@ function RegistrationForm(){
                 <TextField label='Comments' name="comment" value={formData.comment} onChange={handleChange} multiline minRows={4} sx={{mb:2}} fullWidth/>
                 <Typography variant="h4">2. Event policies</Typography>
                 <Typography>Please indicate that you’ve read and agree to the event’s policies.</Typography>
-                <FormControlLabel control={<Checkbox size="small" checked={agreeToWebinarPolicy} onChange={(e)=>{setAgreeToWebinarPolicy(e.target.checked)}}/>} label='I Agree to online webinar policy'/>
+                <FormControlLabel control={<Checkbox size="small" checked={agreeToWebinarPolicy} onChange={(e)=>{setAgreeToWebinarPolicy(e.target.checked)}}/>} label={<Typography>I agree to online <Link  href='https://www.lvmentor.com/privacy-policy'>Webinar policy</Link></Typography>}/>
                 <Button variant="outlined" onClick={handleSubmit} sx={{borderRadius:'16px', color:'black', borderColor:'black'}} fullWidth disabled={!agreeToWebinarPolicy}>Submit</Button>
             </Box>
             <Snackbar open={snackbarData.open} autoHideDuration={4000} onClose={handleSnackbarClose} message="URL copied for sharing">

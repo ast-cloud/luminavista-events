@@ -44,7 +44,7 @@ export default function Navbar(){
                 <X/>
                 <LinkedIn/>
                 <YouTube/>
-                <Typography component={'a'} onClick={()=>{}} sx={{cursor:'pointer'}}>News and articles</Typography>
+                <Typography component={'a'} onClick={()=>{window.location.href='https://www.lvmentor.com/news-and-articles'}} sx={{cursor:'pointer'}}>News and articles</Typography>
                 <Typography component={'a'} onClick={()=>{navigate('/')}} sx={{cursor:'pointer'}}>Events</Typography>                   
             </Box>
 
