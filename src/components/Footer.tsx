@@ -59,8 +59,8 @@ export default function Footer(){
                 <Grid item>
                     <Box sx={{display:'flex', flexDirection:'column'}}>
                         <Typography color='white' mb='5px' fontSize='20px'>LEGAL</Typography>
-                        <Typography color='white'>Terms and conditions</Typography>
-                        <Typography color='white'>Privacy policy</Typography>
+                        <Typography component={'a'} color='white' sx={{cursor:'pointer'}} onClick={()=>{window.location.href='https://www.lvmentor.com/terms-and-conditions'}}>Terms and conditions</Typography>
+                        <Typography component={'a'} color='white' sx={{cursor:'pointer'}} onClick={()=>{window.location.href='https://www.lvmentor.com/privacy-policy'}}>Privacy policy</Typography>
                     </Box>
                 </Grid>
                 <Grid item>
