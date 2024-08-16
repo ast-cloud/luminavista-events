@@ -141,13 +141,13 @@ function RegistrationForm(){
                 <TextField label='Email*' name="email" value={formData.email} onChange={handleChange} error={!!formErrors.email} helperText={formErrors.email} size="small" fullWidth/>
                 <TextField label='Phone number*' name="phone" value={formData.phone} onChange={handleChange} error={!!formErrors.phone} helperText={formErrors.phone} size="small" fullWidth/>
                 <TextField select label='Area of interest' name="areaOfInterest" value={formData.areaOfInterest} onChange={handleChange} InputLabelProps={{sx:{fontSize:'14px'}}} size="small" fullWidth>
-                    <MenuItem value={'Engineering and Technology'}>Engineering and Technology</MenuItem>
-                    <MenuItem value={'Business and Management'}>Business and Management</MenuItem>
-                    <MenuItem value={'Computer Science and IT'}>Computer Science and IT</MenuItem>
-                    <MenuItem value={'Finance and accounting'}>Finance and accounting</MenuItem>
-                    <MenuItem value={'AI and ML'}>AI and ML</MenuItem>
-                    <MenuItem value={'Cybersecurity'}>Cybersecurity</MenuItem>
-                    <MenuItem value={'Others (Specify in the message)'}>Others (Specify in the message)</MenuItem>
+                    <MenuItem value={'Study in Australia'}>Study in Australia</MenuItem>
+                    <MenuItem value={'Migrate to Australia'}>Migrate to Australia</MenuItem>
+                    <MenuItem value={'Career Counselling'}>Career Counselling</MenuItem>
+                    <MenuItem value={'Job Ready Program'}>Job ready program</MenuItem>
+                    <MenuItem value={'Mentorship Program'}>Mentorship program</MenuItem>
+                    <MenuItem value={'Internship'}>Internship</MenuItem>
+                    <MenuItem value={'Others (Specify in the comment)'}>Others (Specify in the message)</MenuItem>
                 </TextField>
                 <TextField label='Comments' name="comment" value={formData.comment} onChange={handleChange} multiline minRows={4} sx={{mb:2}} fullWidth/>
                 <Typography variant="h4">2. Event policies</Typography>

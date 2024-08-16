@@ -17,6 +17,7 @@ export default function Events(){
 
     const contactSectionRef = useRef<HTMLDivElement>(null);
     const scrollToContactSection = () => {
+        window.location.href = 'https://www.lvmentor.com/contact';
         contactSectionRef.current?.scrollIntoView({ behavior: "smooth" });
       };
 
