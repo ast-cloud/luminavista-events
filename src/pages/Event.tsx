@@ -24,7 +24,7 @@ export default function Event(){
 
     useEffect(()=>{
         const fetchEventDetails = async ()=>{
-            let eventData = await axios.get('https://lumina-vista-backend.vercel.app/event/'+id);
+            let eventData = await axios.get('https://lv.aastikyadav.com/event/'+id);
             if(eventData.status==200){
                 setEventDetails(eventData.data.event);
             }

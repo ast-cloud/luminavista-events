@@ -34,10 +34,10 @@ function EventsSection({scrollToContactSection}:any){
     return (
         <Box sx={{display:'flex', flexDirection:'column', alignItems:'center', px:4, pt:4}}>
             <Box sx={{display:'flex', flexDirection:{xs:'column', lg:'row'}, gap:2}}>
-                <Card sx={{display:'flex', flexDirection:'column', width:{xs:'95%', lg:'50%'}, borderRadius:'16px', pt:4, px:4, boxShadow:5}}>
-                    <Typography variant="h2" color={'#265D6B'} pb={4}>Events</Typography>
-                    <Typography pb={4}>Explore our Events to discover exciting opportunities to enhance your career journey. From insightful seminars to hands-on workshops, stay updated on events designed to boost your skills, network with industry professionals, and achieve your goals. Join us and be a part of our vibrant community!</Typography>
-                    <Button variant="outlined" size="large" sx={{color:'black', borderColor:'black', borderRadius:'12px', textTransform:'none', width:'200px', px:2, textWrap:'nowrap', ":hover":{color:'white', backgroundColor:'black'}}} onClick={scrollToContactSection}>Book a free session now</Button>
+                <Card sx={{display:'flex', flexDirection:'column', gap:{xl:4}, width:{xs:'94%', lg:'50%'}, borderRadius:'16px', pt:4, px:4, boxShadow:5}}>
+                    <Typography variant="h2" color={'#265D6B'} pb={4} fontSize={{lg:'65px'}}>Events</Typography>
+                    <Typography pb={4} fontSize={{xl:'25px'}}>Explore our Events to discover exciting opportunities to enhance your career journey. From insightful seminars to hands-on workshops, stay updated on events designed to boost your skills, network with industry professionals, and achieve your goals. Join us and be a part of our vibrant community!</Typography>
+                    <Button variant="outlined" sx={{color:'black', borderColor:'black', borderRadius:'12px', textTransform:'none', width:{xs:'200px',xl:'310px'}, fontSize:{xl:'25px'}, px:2, textWrap:'nowrap', ":hover":{color:'white', backgroundColor:'black'}}} onClick={scrollToContactSection}>Book a free session now</Button>
                     <ExpandMoreOutlined sx={{fontSize:'90px', m:0, p:0, textShadow:5}}/>
                 </Card>
                 <Box component={'img'} src="/Conference.webp" sx={{width:{xs:'100%', lg:'50%'}, borderRadius:'16px'}}/>
@@ -53,7 +53,7 @@ function UpcomingEvents(){
     useEffect(()=>{
 
         const fetchAllEvents = async ()=>{
-            let allEventsData = await axios.get('https://lumina-vista-backend.vercel.app/event');
+            let allEventsData = await axios.get('https://lv.aastikyadav.com/event');
             if(allEventsData.status==200){
                 setAllEvents(allEventsData.data);
                 console.log('All events - ', allEventsData.data);
@@ -81,12 +81,12 @@ function UpcomingEvents(){
                         console.log(date.getFullYear());
                         return <Grid key={event._id} item sx={{width:'290px'}}>
                         <Card sx={{borderRadius:'16px', boxShadow:5}}>
-                            <CardMedia image={eventsImages[index]} sx={{height:'35vh', objectFit:'fill'}}/>
+                            <CardMedia image={eventsImages[index]} sx={{height:'170px', objectFit:'fill'}}/>
                             <CardContent>
                                 <Typography>{event.eventName}</Typography>
                                 <Typography>{`${date.getDate()} ${monthNames[date.getMonth()]}, ${date.getFullYear()}`}</Typography>
                                 <Typography>Webinar</Typography>
-                                <Button variant="outlined" size="small" sx={{mt:2, borderRadius:'14px', textTransform:'none', color:'black', borderColor:'black', ":hover":{color:'white', backgroundColor:'black'}}} onClick={()=>{navigate('/'+event._id)}}>Register</Button>
+                                <Button variant="outlined" size="small" sx={{mt:2, borderRadius:'8px', textTransform:'none', color:'black', borderColor:'black', ":hover":{color:'white', backgroundColor:'black'}}} onClick={()=>{navigate('/'+event._id)}}>Register</Button>
                             </CardContent>
                         </Card>
                     </Grid>})}

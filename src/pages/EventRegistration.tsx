@@ -91,7 +91,7 @@ function RegistrationForm(){
                 eventId: id
             }
 
-            fetch('http://localhost:3000/userDetails', {
+            fetch('https://lv.aastikyadav.com/userDetails', {
                 method:'POST',
                 headers: {
                     'Accept': 'application/json',
