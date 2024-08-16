@@ -133,7 +133,7 @@ function RegistrationForm(){
     return (
         <>
             <Box sx={{display:'flex', flexDirection:'column', width:'35vw', alignItems:'flex-start', gap:4, border:'0px solid red'}}>
-                <Typography variant="h4">1. Add your details</Typography>
+                <Typography variant="h4">Add your details</Typography>
                 <Box sx={{display:'flex', flexDirection:'row', gap:2}}>
                     <TextField label='Firstname*' name="firstName" value={formData.firstName} onChange={handleChange} error={!!formErrors.firstName} helperText={formErrors.firstName}size="small" />
                     <TextField label='Lastname*' name="lastName" value={formData.lastName} onChange={handleChange} error={!!formErrors.lastName} helperText={formErrors.lastName} size="small" />
@@ -150,7 +150,7 @@ function RegistrationForm(){
                     <MenuItem value={'Others (Specify in the comment)'}>Others (Specify in the message)</MenuItem>
                 </TextField>
                 <TextField label='Comments' name="comment" value={formData.comment} onChange={handleChange} multiline minRows={4} sx={{mb:2}} fullWidth/>
-                <Typography variant="h4">2. Event policies</Typography>
+                <Typography variant="h4">Event policies</Typography>
                 <Typography>Please indicate that you’ve read and agree to the event’s policies.</Typography>
                 <FormControlLabel control={<Checkbox size="small" checked={agreeToWebinarPolicy} onChange={(e)=>{setAgreeToWebinarPolicy(e.target.checked)}}/>} label={<Typography>I agree to online <Link  href='https://www.lvmentor.com/webinar-policy'>Webinar policy</Link></Typography>}/>
                 <Button variant="outlined" onClick={handleSubmit} sx={{borderRadius:'16px', color:'black', borderColor:'black'}} fullWidth disabled={!agreeToWebinarPolicy}>Submit</Button>
