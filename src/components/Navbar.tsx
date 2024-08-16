@@ -38,7 +38,7 @@ export default function Navbar(){
 
     return (
         <>
-            <Box sx={{display:{ xs: 'none', md: 'flex' }, flexDirection:'row', justifyContent:'flex-end', gap: 5, py:1, pr: 8}}>
+            <Box sx={{display:{ xs: 'none', md: 'flex' }, height:'20px', flexDirection:'row', justifyContent:'flex-end', alignItems:'center', gap: 5, py:1, pr: 8}}>
                 <Instagram/>
                 <Facebook/>
                 <X/>
@@ -48,10 +48,10 @@ export default function Navbar(){
                 <Typography component={'a'} onClick={()=>{navigate('/')}} sx={{cursor:'pointer'}}>Events</Typography>                   
             </Box>
 
-            <Grid container sx={{border:'1px solid black', justifyContent:'space-between', backgroundColor:'#265D6B', px:{xs:2, sm:4, md:8}, py:1}}>
+            <Grid container sx={{border:'0px solid black', height:'80px', justifyContent:'space-between', alignItems:'center', backgroundColor:'#265D6B', px:{xs:2, sm:4, md:8}, py:1}}>
 
                 <Grid item border={'0px solid red'} xs={6}>
-                    <Box sx={{display:'flex', flexDirection:'row'}}>
+                    <Box sx={{display:'flex', flexDirection:'row', alignItems:'center'}}>
                         <Avatar src='/lvlogo.webp' sx={{height:'70px', width:'70px'}}/>
                         <Box sx={{display:'flex', flexDirection:'column', justifyContent:'center', ml:2}}>
                             <Typography color={'white'} noWrap fontSize={{xs:15, sm:20}} sx={{fontWeight:'bold', mb:0, pb:0}}>Lumina Vista</Typography>

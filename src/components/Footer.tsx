@@ -8,13 +8,13 @@ export default function Footer(){
     const [faqsOpen, setFaqsOpen] = useState<boolean>(false);
     const [aboutOpen, setAboutOpen] = useState<boolean>(false);
     return (
-      <Box height='auto' py='35px' px='8vw' sx={{backgroundColor:'#265D6B', display:'flex', flexDirection:'column', gap:4}}>
-        <Box sx={{display:'flex', flexDirection:'row', justifyContent:'space-between'}}>
+      <Box height='auto' py='35px' px='8vw' sx={{backgroundColor:'#265D6B', display:'flex', flexDirection:'column', gap:5}}>
+        <Box sx={{display:'flex', flexDirection:{xs:'column',lg:'row'}, justifyContent:'space-between', gap:{xs:4,lg:0}}}>
             <Box sx={{display:'flex', flexDirection:'column', justifyContent:'center', gap:2, border:'0px solid yellow'}}>
                 <Avatar src="/lvlogo.webp" sx={{height:'90px', width:'90px'}}></Avatar>
                 <Typography color={'white'} fontWeight={'bold'} noWrap>LUMINA VISTA</Typography>
             </Box>
-            <Grid container gap={10} sx={{justifyContent:'end', border:'0px solid red'}}>
+            <Grid container columnGap={10} rowGap={5} sx={{justifyContent:{xs:'center',sm:'start',lg:'end'}, border:'0px solid red'}}>
                 <Grid item>
                     <Box sx={{display:'flex', flexDirection:'column'}}>
                         <Typography color='white' mb='5px' fontSize='20px'>COMPANY</Typography>
@@ -77,8 +77,8 @@ export default function Footer(){
                         <Typography color='white' mb='5px' fontSize='20px'>CONTACT</Typography>
                         <Typography color='white'>info@lumvista.com.au</Typography>
                         <Typography color='white'>Tel:123-456-7890</Typography>
-                        <Typography color='white'>Adelaide, Brisbane, Melbourne,</Typography>
-                        <Typography color='white'>Sydney</Typography>
+                        <Typography color='white'>Adelaide, Brisbane,</Typography>
+                        <Typography color='white'>Melbourne, Sydney</Typography>
                     </Box>
                 </Grid>
             </Grid>
