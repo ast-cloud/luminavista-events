@@ -57,8 +57,18 @@ export default function Event(){
       </div>
     }
     else{
-        console.log('Time - ',eventDetails.eventTime);
-        let date = new Date(eventDetails.eventDate[selectedDateIndex]);
+        console.log('Event dates - ', eventDetails.eventDate);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0); 
+        let upcomingEventDates = eventDetails.eventDate.filter((ed)=>{
+          let edate = new Date(ed);
+          edate.setHours(0,0,0,0);
+          return edate>today;
+        });
+        console.log('upcomingEventDates - ', upcomingEventDates);
+        upcomingEventDates.sort((a, b) => a - b);
+        console.log('upcomingEventDates sorted - ',upcomingEventDates);
+        let date = new Date(upcomingEventDates[selectedDateIndex]);
         let formattedDateString = `${date.getDate()} ${monthNames[date.getMonth()]}, ${date.getFullYear()}`;
         let day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
         let month = date.getMonth() < 10 ? '0' + date.getMonth() : date.getMonth();
@@ -75,7 +85,7 @@ export default function Event(){
                     <Box component={'img'} src="/Australian_University.webp" width={{xs:'80%', sm:'75%', md:'65%', lg:'50%'}} sx={{borderRadius:'16px'}}/>
                     <Box sx={{display:'flex', flexDirection:'column', width:{xs:'80%', sm:'75%', md:'65%', lg:'50%'}, mt:5, border:'0px solid black'}}>
                         <Typography fontSize={'28px'} sx={{}}>Time & Location</Typography>
-                        <Typography my={1}>{(eventDetails.eventDate.length>1)? ( (eventDetails.eventDate.length-1)+' more dates') : '...'}</Typography>
+                        <Typography my={1}>{(upcomingEventDates.length>1)? ( (upcomingEventDates.length-1)+' more dates') : '...'}</Typography>
                         <Box sx={{display:'flex', flexDirection:{xs:'column', sm:'row'}, justifyContent:'space-between', gap:{xs:2, sm:0}}}>
                             <Typography my={1}>{formattedDateString}, {eventDetails.eventTime} GMT+9:30</Typography>
                             <Button variant="outlined" size="small" sx={{borderRadius:'16px', textTransform:'none', color:'black', borderColor:'black', height:'auto', Width:'150px', ":hover":{color:'white', backgroundColor:'black', borderColor:'black'}}} onClick={()=>{setDateSelectDialogOpen(true)}}>Select Different Date</Button>
@@ -88,7 +98,7 @@ export default function Event(){
                     </Box>
                 </Card>
                 <Snackbar open={urlCopiedSnackbarOpen} autoHideDuration={4000} onClose={handleSnackbarClose} message="URL copied for sharing"/>
-                <DateSelectDialog open={dateSelectDialogOpen} datesArray={eventDetails.eventDate} onClose={handleDateSelectDialogClose} selectedValue={0}/>
+                <DateSelectDialog open={dateSelectDialogOpen} datesArray={upcomingEventDates} onClose={handleDateSelectDialogClose} selectedValue={0}/>
             </Box>
         );
     }
@@ -120,7 +130,7 @@ function DateSelectDialog(props: DateSelectDialogProps) {
             {datesArray.map((date, index) => {
               let formattedDate = new Date(date);
               let formattedDateString = `${formattedDate.getDate()} ${monthNames[formattedDate.getMonth()]}, ${formattedDate.getFullYear()}`;
-              return <ListItem disableGutters key={formattedDate.getUTCDate()} sx={{m:0}}>
+              return <ListItem disableGutters key={formattedDate.getTime()} sx={{m:0}}>
                 <ListItemButton onClick={() => handleListItemClick(index)}>
                   <ListItemText primary={formattedDateString} />
                 </ListItemButton>
