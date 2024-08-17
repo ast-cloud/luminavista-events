@@ -74,7 +74,7 @@ export default function Navbar(){
                         <MenuItem>Migrate to Australia</MenuItem>
                     </Menu> */}
                     
-                    <Button sx={{textTransform:'none', fontSize:15, fontWeight:'normal', color:'white', '&:hover':{color:'#aeefc5'}}} onClick={function(){window.location.href=('https://www.lvmentor.com/')}} onMouseEnter={(event)=>{
+                    <Button sx={{textTransform:'none', fontSize:15, fontWeight:'normal', color:'white', '&:hover':{color:'#aeefc5'}}} onClick={function(){window.location.href=('https://www.lvmentor.com/faq')}} onMouseEnter={(event)=>{
                         setAnchorEl(event.currentTarget);
                         
                     }}>FAQ</Button>
@@ -92,19 +92,40 @@ export default function Navbar(){
                         <MenuIcon fontSize='large'/>
                     </IconButton>
                     <Menu anchorEl={anchorEl} open={mobileMenuOpen} onClose={handleMenuClose} sx={{width:'50vw', border:'0px solid black'}} >
-                        <MenuItem onClick={handleMenuClose}>Home</MenuItem>
+                        <MenuItem onClick={()=>{
+                            handleMenuClose();
+                            window.location.href=('https://www.lvmentor.com/');
+                        }}>Home</MenuItem>
                         <Divider/>
-                        <MenuItem onClick={handleMenuClose}>Services</MenuItem>
+                        <MenuItem onClick={()=>{
+                            handleMenuClose();
+                            window.location.href=('https://www.lvmentor.com/services');
+                        }}>Services</MenuItem>
                         <Divider/>
-                        <MenuItem onClick={handleMenuClose}>FAQs</MenuItem>
+                        <MenuItem onClick={()=>{
+                            handleMenuClose();
+                            window.location.href=('https://www.lvmentor.com/faq');
+                        }}>FAQs</MenuItem>
                         <Divider/>
-                        <MenuItem onClick={handleMenuClose}>Events</MenuItem>
+                        <MenuItem onClick={()=>{
+                            handleMenuClose();
+                            navigate('/');
+                        }}>Events</MenuItem>
                         <Divider/>
-                        <MenuItem onClick={handleMenuClose}>News and articles</MenuItem>
+                        <MenuItem onClick={()=>{
+                            handleMenuClose();
+                            window.location.href=('https://www.lvmentor.com/news-and-articles');
+                        }}>News and articles</MenuItem>
                         <Divider/>
-                        <MenuItem onClick={handleMenuClose}>About</MenuItem>
+                        <MenuItem onClick={()=>{
+                            handleMenuClose();
+                            window.location.href=('https://www.lvmentor.com/about');
+                        }}>About</MenuItem>
                         <Divider/>
-                        <MenuItem onClick={handleMenuClose}>Contact Us</MenuItem>
+                        <MenuItem onClick={()=>{
+                            handleMenuClose();
+                            window.location.href=('https://www.lvmentor.com/contact');
+                        }}>Contact Us</MenuItem>
                     </Menu>
                 </Grid>
 
