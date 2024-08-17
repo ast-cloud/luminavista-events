@@ -8,18 +8,18 @@ export default function Footer(){
     const [faqsOpen, setFaqsOpen] = useState<boolean>(false);
     const [aboutOpen, setAboutOpen] = useState<boolean>(false);
     return (
-      <Box height='auto' py='35px' px='8vw' sx={{backgroundColor:'#265D6B', display:'flex', flexDirection:'column', gap:5}}>
-        <Box sx={{display:'flex', flexDirection:{xs:'column',lg:'row'}, justifyContent:'space-between', gap:{xs:4,lg:0}}}>
+      <Box height='auto' py='75px' px='7vw' sx={{backgroundColor:'#265D6B', display:'flex', flexDirection:'column', gap:5}}>
+        <Box sx={{display:'flex', flexDirection:{xs:'column',lg:'row'}, justifyContent:'space-around', gap:{xs:4,lg:20}}}>
             <Box sx={{display:'flex', flexDirection:'column', justifyContent:'center', gap:2, border:'0px solid yellow'}}>
                 <Avatar src="/lvlogo.webp" sx={{height:'90px', width:'90px'}}></Avatar>
                 <Typography color={'white'} fontWeight={'bold'} noWrap>LUMINA VISTA</Typography>
             </Box>
-            <Grid container columnGap={10} rowGap={5} sx={{justifyContent:{xs:'center',sm:'start',lg:'end'}, border:'0px solid red'}}>
-                <Grid item>
+            <Grid container columnGap={{sm:4,md:10,lg:10,xl:24}} rowGap={5} sx={{justifyContent:{xs:'center',sm:'start',lg:'center',xl:'center'}, border:'0px solid red'}}>
+                <Grid item sx={{display:'flex', border:'0px solid white', flexDirection:'row', gap:{xs:8,sm:8,md:8,lg:7,xl:22}}}>
                     <Box sx={{display:'flex', flexDirection:'column'}}>
-                        <Typography color='white' mb='5px' fontSize='20px'>COMPANY</Typography>
+                        <Typography color='white' mb='12px' fontSize='20px'>COMPANY</Typography>
                         <Typography color='white'>Home</Typography>
-                        <Box onClick={()=>{setServicesOpen(!servicesOpen)}} sx={{display:'flex', flexDirection:'row', cursor:'pointer'}}>
+                        <Box onClick={()=>{setServicesOpen(!servicesOpen)}} sx={{display:'flex', flexDirection:'row', cursor:'pointer', border:'0px solid red', justifyContent:'space-between'}}>
                             <Typography color='white'>Services</Typography>
                             &nbsp;&nbsp;
                             {servicesOpen?<ExpandLess sx={{color:'white'}}/>:<ExpandMore sx={{color:'white'}}/>}
@@ -32,7 +32,7 @@ export default function Footer(){
                             <Typography color='white' fontSize='14px'>&nbsp;Mentorship</Typography>
                             <Typography color='white' fontSize='14px'>&nbsp;Internship</Typography>
                         </Collapse>
-                        <Box onClick={()=>{setFaqsOpen(!faqsOpen)}} sx={{display:'flex', flexDirection:'row', cursor:'pointer'}}>
+                        <Box onClick={()=>{setFaqsOpen(!faqsOpen)}} sx={{display:'flex', flexDirection:'row', cursor:'pointer', border:'0px solid red', justifyContent:'space-between'}}>
                             <Typography color='white'>FAQs</Typography>
                             &nbsp;&nbsp;
                             {faqsOpen?<ExpandLess sx={{color:'white'}}/>:<ExpandMore sx={{color:'white'}}/>}
@@ -41,7 +41,7 @@ export default function Footer(){
                             <Typography color='white' fontSize='14px'>&nbsp;Watch</Typography>
                             <Typography color='white' fontSize='14px'>&nbsp;Read</Typography>
                         </Collapse>
-                        <Box onClick={()=>{setAboutOpen(!aboutOpen)}} sx={{display:'flex', flexDirection:'row', cursor:'pointer'}}>
+                        <Box onClick={()=>{setAboutOpen(!aboutOpen)}} sx={{display:'flex', flexDirection:'row', cursor:'pointer', justifyContent:'space-between'}}>
                             <Typography color='white'>About</Typography>
                             &nbsp;&nbsp;
                             {aboutOpen?<ExpandLess sx={{color:'white'}}/>:<ExpandMore sx={{color:'white'}}/>}
@@ -55,30 +55,29 @@ export default function Footer(){
                         </Collapse>
                         <Typography color='white'>Contact Us</Typography>
                     </Box>
-                </Grid>
-                <Grid item>
+                {/* </Grid>
+                <Grid item> */}
                     <Box sx={{display:'flex', flexDirection:'column'}}>
-                        <Typography color='white' mb='5px' fontSize='20px'>LEGAL</Typography>
+                        <Typography color='white' mb='12px' fontSize='20px'>LEGAL</Typography>
                         <Typography component={'a'} color='white' sx={{cursor:'pointer'}} onClick={()=>{window.location.href='https://www.lvmentor.com/terms-and-conditions'}}>Terms and conditions</Typography>
                         <Typography component={'a'} color='white' sx={{cursor:'pointer'}} onClick={()=>{window.location.href='https://www.lvmentor.com/privacy-policy'}}>Privacy policy</Typography>
                     </Box>
                 </Grid>
-                <Grid item>
+                <Grid item sx={{display:'flex', border:'0px solid white', flexDirection:'row', gap:{xs:16,sm:14,md:10,lg:10,xl:22}, mr:{xs:1, xm:0}}}>
                     <Box sx={{display:'flex', flexDirection:'column'}}>
-                        <Typography color='white' mb='5px' fontSize='20px'>SOCIAL</Typography>
+                        <Typography color='white' mb='12px' fontSize='20px'>SOCIAL</Typography>
                         <Typography color='white'>LinkedIn</Typography>
                         <Typography color='white'>Facebook</Typography>
                         <Typography color='white'>Instagram</Typography>
                         <Typography color='white'>X</Typography>
                     </Box>
-                </Grid>
-                <Grid item>
+                {/* </Grid>
+                <Grid item> */}
                     <Box sx={{display:'flex', flexDirection:'column'}}>
-                        <Typography color='white' mb='5px' fontSize='20px'>CONTACT</Typography>
-                        <Typography color='white'>info@lumvista.com.au</Typography>
-                        <Typography color='white'>Tel:123-456-7890</Typography>
-                        <Typography color='white'>Adelaide, Brisbane,</Typography>
-                        <Typography color='white'>Melbourne, Sydney</Typography>
+                        <Typography color='white' mb='12px' fontSize='20px'>CONTACT</Typography>
+                        <Typography color='white'>info@lvmentor.com</Typography>
+                        <Typography color='white'>Tel:1300941827</Typography>
+                        <Typography color='white'>Australia | India</Typography>
                     </Box>
                 </Grid>
             </Grid>

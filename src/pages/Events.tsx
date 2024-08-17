@@ -37,8 +37,8 @@ function EventsSection(){
         <Box sx={{display:'flex', flexDirection:'column', alignItems:'center', pl:{md:5, lg:4}, pr:{md:2,lg:4}, pt:4}}>
             <Box sx={{display:'flex', flexDirection:{xs:'column', lg:'row'}, width:{xs:'auto',lg:'auto'}, gap:2}}>
                 <Card sx={{display:'flex', flexDirection:'column', gap:{xl:4}, width:{xs:'auto', lg:'50%'}, borderRadius:'16px', pt:4, px:4, boxShadow:0}}>
-                    <Typography variant="h2" color={'#265D6B'} pb={4} fontSize={{xs:'32px',sm:'45px',lg:'65px'}}>Events</Typography>
-                    <Typography pb={4} fontSize={{xl:'22px'}}>Explore our Events to discover exciting opportunities to enhance your career journey. From insightful seminars to hands-on workshops, stay updated on events designed to boost your skills, network with industry professionals, and achieve your goals. Join us and be a part of our vibrant community!</Typography>
+                    <Typography variant="subtitle2" color={'#265D6B'} pb={4} fontSize={{xs:'32px',sm:'45px',lg:'65px'}}>Events</Typography>
+                    <Typography pb={4} fontSize={{xl:'20px'}}>Explore our Events to discover exciting opportunities to enhance your career journey. From insightful seminars to hands-on workshops, stay updated on events designed to boost your skills, network with industry professionals, and achieve your goals. Join us and be a part of our vibrant community!</Typography>
                     
                     {/* <ExpandMoreOutlined sx={{fontSize:'90px', m:0, p:0, textShadow:5}}/> */}
                     {/* <img src="/whiteDownArrow.svg" alt="" style={{height:'90px', width:'90px', backgroundColor:'red', border:'1px solid black'}}/> */}
