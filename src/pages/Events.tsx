@@ -79,8 +79,9 @@ function UpcomingEvents(){
             <Card sx={{width:'90vw', display:'flex', flexDirection:'column', alignSelf:'center', pt:5, pb:8, boxShadow:5, borderRadius:'16px'}}>
                 <Typography variant="h6" sx={{alignSelf:'center'}}>Upcoming Events</Typography>
                 <Grid container px={4} mt={5} gap={4} justifyContent={'center'}>
-                    {allEvents.response.map((event:any, index:number)=>{ 
-                        let date = new Date(event.eventDate[0]);
+                    {allEvents.response.map((event:any, index:number)=>{
+                        let upcomingEventDates = getUpcomingEventDatesArray(event.eventDate); 
+                        let date = new Date(upcomingEventDates[0]);
                         console.log(date.getFullYear());
                         return <Grid key={event._id} item sx={{width:'290px'}}>
                         <Card sx={{borderRadius:'16px', boxShadow:5}}>
@@ -97,4 +98,16 @@ function UpcomingEvents(){
             </Card>
         );
     }
+}
+
+function getUpcomingEventDatesArray(eventDates: any){
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    let upcomingEventDates = eventDates.filter((ed)=>{
+        let edate = new Date(ed);
+        edate.setHours(0,0,0,0);
+        return edate>today;
+    });
+    upcomingEventDates.sort((a, b) => a - b);
+    return upcomingEventDates;
 }
