@@ -1,7 +1,7 @@
 // import { ExpandMoreOutlined } from "@mui/icons-material";
 import { Box, Button, Card, CardContent, CardMedia, CircularProgress, Divider, Grid, Typography } from "@mui/material";
 import axios from "axios";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 // import ContactUsSection from "../components/ContactUsSection";
 // import WhiteDownArrow from '/whiteDownArrow.svg';
@@ -15,16 +15,16 @@ const eventsImages = ['/Australian_University.webp', '/OperaHouse.webp', '/Two_B
 
 export default function Events(){
 
-    const contactSectionRef = useRef<HTMLDivElement>(null);
-    const scrollToContactSection = () => {
-        window.location.href = 'https://www.lvmentor.com/contact';
-        contactSectionRef.current?.scrollIntoView({ behavior: "smooth" });
-      };
+    // const contactSectionRef = useRef<HTMLDivElement>(null);
+    // const scrollToContactSection = () => {
+    //     window.location.href = 'https://www.lvmentor.com/contact';
+    //     contactSectionRef.current?.scrollIntoView({ behavior: "smooth" });
+    //   };
 
     return (
         <Box sx={{display:'flex', flexDirection:'column', alignItems:'center'}}>
-            <EventsSection scrollToContactSection={scrollToContactSection}/>
-            <Divider sx={{mt:5, mb:5, width:'90vw', alignSelf:'center'}}/>
+            <EventsSection />
+            <Divider sx={{mt:2, mb:5, width:'90vw', alignSelf:'center'}}/>
             <UpcomingEvents/>
             <Divider sx={{mt:8, mb:5, width:'90vw', alignSelf:'center'}}/>
             {/* <ContactUsSection reference={contactSectionRef}/> */}
@@ -32,14 +32,14 @@ export default function Events(){
     );
 }
 
-function EventsSection({scrollToContactSection}:any){
+function EventsSection(){
     return (
         <Box sx={{display:'flex', flexDirection:'column', alignItems:'center', pl:{md:5, lg:4}, pr:{md:2,lg:4}, pt:4}}>
             <Box sx={{display:'flex', flexDirection:{xs:'column', lg:'row'}, width:{xs:'auto',lg:'auto'}, gap:2}}>
                 <Card sx={{display:'flex', flexDirection:'column', gap:{xl:4}, width:{xs:'auto', lg:'50%'}, borderRadius:'16px', pt:4, px:4, boxShadow:0}}>
                     <Typography variant="h2" color={'#265D6B'} pb={4} fontSize={{xs:'32px',sm:'45px',lg:'65px'}}>Events</Typography>
                     <Typography pb={4} fontSize={{xl:'25px'}}>Explore our Events to discover exciting opportunities to enhance your career journey. From insightful seminars to hands-on workshops, stay updated on events designed to boost your skills, network with industry professionals, and achieve your goals. Join us and be a part of our vibrant community!</Typography>
-                    <Button variant="outlined" sx={{color:'black', borderColor:'black', borderRadius:'12px', textTransform:'none', width:{xs:'200px',xl:'310px'}, fontSize:{xl:'25px'}, px:2, mb:0, textWrap:'nowrap', ":hover":{color:'white', backgroundColor:'black'}}} onClick={scrollToContactSection}>Book a free session now</Button>
+                    
                     {/* <ExpandMoreOutlined sx={{fontSize:'90px', m:0, p:0, textShadow:5}}/> */}
                     {/* <img src="/whiteDownArrow.svg" alt="" style={{height:'90px', width:'90px', backgroundColor:'red', border:'1px solid black'}}/> */}
                 </Card>

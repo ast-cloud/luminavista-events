@@ -136,12 +136,12 @@ function RegistrationForm({id, datetime}){
             <Box sx={{display:'flex', flexDirection:'column', width:'35vw', alignItems:'flex-start', gap:4, border:'0px solid red'}}>
                 <Typography variant="h4">Add your details</Typography>
                 <Box sx={{display:'flex', flexDirection:'row', gap:2}}>
-                    <TextField label='Firstname*' name="firstName" value={formData.firstName} onChange={handleChange} error={!!formErrors.firstName} helperText={formErrors.firstName}size="small" />
-                    <TextField label='Lastname*' name="lastName" value={formData.lastName} onChange={handleChange} error={!!formErrors.lastName} helperText={formErrors.lastName} size="small" />
+                    <TextField label='Firstname*' name="firstName" value={formData.firstName} onChange={handleChange} error={!!formErrors.firstName} helperText={formErrors.firstName}size="small" sx={{'& .MuiOutlinedInput-root':{'& fieldset':{borderColor:'black'}}}}/>
+                    <TextField label='Lastname*' name="lastName" value={formData.lastName} onChange={handleChange} error={!!formErrors.lastName} helperText={formErrors.lastName} size="small" sx={{'& .MuiOutlinedInput-root':{'& fieldset':{borderColor:'black'}}}}/>
                 </Box>
-                <TextField label='Email*' name="email" value={formData.email} onChange={handleChange} error={!!formErrors.email} helperText={formErrors.email} size="small" fullWidth/>
-                <TextField label='Phone number*' name="phone" value={formData.phone} onChange={handleChange} error={!!formErrors.phone} helperText={formErrors.phone} size="small" fullWidth/>
-                <TextField select label='Area of interest' name="areaOfInterest" value={formData.areaOfInterest} onChange={handleChange} InputLabelProps={{sx:{fontSize:'14px'}}} size="small" fullWidth>
+                <TextField label='Email*' name="email" value={formData.email} onChange={handleChange} error={!!formErrors.email} helperText={formErrors.email} size="small" fullWidth sx={{'& .MuiOutlinedInput-root':{'& fieldset':{borderColor:'black'}}}}/>
+                <TextField label='Phone number*' name="phone" value={formData.phone} onChange={handleChange} error={!!formErrors.phone} helperText={formErrors.phone} size="small" fullWidth sx={{'& .MuiOutlinedInput-root':{'& fieldset':{borderColor:'black'}}}}/>
+                <TextField select label='Area of interest' name="areaOfInterest" value={formData.areaOfInterest} onChange={handleChange} InputLabelProps={{sx:{fontSize:'14px'}}} size="small" fullWidth sx={{'& .MuiOutlinedInput-root':{'& fieldset':{borderColor:'black'}}}}>
                     <MenuItem value={'Study in Australia'}>Study in Australia</MenuItem>
                     <MenuItem value={'Migrate to Australia'}>Migrate to Australia</MenuItem>
                     <MenuItem value={'Career Counselling'}>Career Counselling</MenuItem>
@@ -150,7 +150,7 @@ function RegistrationForm({id, datetime}){
                     <MenuItem value={'Internship'}>Internship</MenuItem>
                     <MenuItem value={'Others (Specify in the comment)'}>Others (Specify in the message)</MenuItem>
                 </TextField>
-                <TextField label='Comments' name="comment" value={formData.comment} onChange={handleChange} multiline minRows={4} sx={{mb:2}} fullWidth/>
+                <TextField label='Comments' name="comment" value={formData.comment} onChange={handleChange} multiline minRows={4} fullWidth sx={{mb:2, '& .MuiOutlinedInput-root':{'& fieldset':{borderColor:'black'}}}}/>
                 {/* <Typography variant="h4">Event policies</Typography> */}
                 <Typography>Please indicate that you’ve read and agree to the event’s policies.</Typography>
                 <FormControlLabel control={<Checkbox size="small" checked={agreeToWebinarPolicy} onChange={(e)=>{setAgreeToWebinarPolicy(e.target.checked)}}/>} label={<Typography>I agree to online <Link  href='https://www.lvmentor.com/webinar-policy'>Webinar policy</Link></Typography>}/>
