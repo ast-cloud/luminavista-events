@@ -71,7 +71,7 @@ export default function Event(){
         let date = new Date(upcomingEventDates[selectedDateIndex]);
         let formattedDateString = `${date.getDate()} ${monthNames[date.getMonth()]}, ${date.getFullYear()}`;
         let day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
-        let month = date.getMonth() < 10 ? '0' + (date.getMonth()+1) : (date.getMonth()+1);
+        let month = (date.getMonth()+1) < 10 ? '0' + (date.getMonth()+1) : (date.getMonth()+1);
         console.log('lalalalalla month - ',month);
         let year = date.getFullYear();
         let startHours = eventDetails.eventTime.slice(0,2), startMinutes = eventDetails.eventTime.slice(3,5), endHours = eventDetails.eventTime.slice(6,8), endMinutes = eventDetails.eventTime.slice(9);
