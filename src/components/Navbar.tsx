@@ -91,7 +91,7 @@ export default function Navbar(){
                     <IconButton edge="end" color="inherit" aria-label="menu" onClick={handleMenuOpen} sx={{ color:'white', }}>
                         <MenuIcon fontSize='large'/>
                     </IconButton>
-                    <Menu anchorEl={anchorEl} open={mobileMenuOpen} onClose={handleMenuClose} sx={{width:'50vw', border:'1px solid black'}} >
+                    <Menu anchorEl={anchorEl} open={mobileMenuOpen} onClose={handleMenuClose} sx={{width:'50vw', border:'0px solid black'}} >
                         <MenuItem onClick={handleMenuClose}>Home</MenuItem>
                         <Divider/>
                         <MenuItem onClick={handleMenuClose}>Services</MenuItem>
