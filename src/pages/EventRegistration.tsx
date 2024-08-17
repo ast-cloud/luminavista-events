@@ -79,7 +79,7 @@ function RegistrationForm({id, datetime}){
 
     const handleSubmit = ()=>{
         if(validate()){
-            console.log('Form submitted - ' + JSON.stringify(formData));
+            console.log('Form submitted - ' + JSON.stringify({...formData,registrationDate:datetime}));
 
             let newobj = {
                 firstName:formData.firstName,
@@ -189,7 +189,7 @@ function EventDetailBox({id, datetime}){
       </div>
     }
 
-    let formattedDatetime = ''+(datetime.slice(0,2))+' '+(monthNames[parseInt(datetime.slice(2,4))])+' '+datetime.slice(4,8)+', '+ datetime.slice(8,10)+':'+datetime.slice(10,12)+' - '+datetime.slice(12,14)+':'+datetime.slice(14,16);
+    let formattedDatetime = ''+(datetime.slice(0,2))+' '+(monthNames[(parseInt(datetime.slice(2,4)))-1])+' '+datetime.slice(4,8)+', '+ datetime.slice(8,10)+':'+datetime.slice(10,12)+' - '+datetime.slice(12,14)+':'+datetime.slice(14,16);
 
     return (
         <Box sx={{display:'flex', flexDirection:'column', p:2, width:'20vw', border:'1px solid black'}}>
