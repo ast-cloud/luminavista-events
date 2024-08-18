@@ -87,7 +87,7 @@ function UpcomingEvents(){
                         <Card sx={{borderRadius:'16px', boxShadow:5}}>
                             <CardMedia image={eventsImages[index]} sx={{height:'170px', objectFit:'fill'}}/>
                             <CardContent>
-                                <Typography>{event.eventName}</Typography>
+                                <Typography fontWeight={'bold'}>{event.eventName}</Typography>
                                 <Typography>{`${date.getDate()} ${monthNames[date.getMonth()]}, ${date.getFullYear()}`}</Typography>
                                 <Typography>Webinar</Typography>
                                 <Button variant="outlined" size="small" sx={{mt:2, borderRadius:'8px', textTransform:'none', color:'black', borderColor:'black', ":hover":{color:'white', backgroundColor:'black'}}} onClick={()=>{navigate('/'+event._id)}}>Register</Button>

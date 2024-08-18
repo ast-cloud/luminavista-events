@@ -13,7 +13,7 @@ export default function EventRegistration(){
     const {id, datetime} = useParams();
 
     return (
-        <Box sx={{display:'flex', flexDirection:'row', justifyContent:'center', alignItems:'flex-start', gap:5, my:10}}> 
+        <Box sx={{display:'flex', flexDirection:{xs:'column', md:'row'}, justifyContent:'center', alignItems:{xs:'center', md:'flex-start'}, gap:5, my:10}}> 
             <RegistrationForm id={id} datetime={datetime}/>
             <EventDetailBox id={id} datetime={datetime}/>
         </Box>
@@ -133,11 +133,11 @@ function RegistrationForm({id, datetime}){
     
     return (
         <>
-            <Box sx={{display:'flex', flexDirection:'column', width:'35vw', alignItems:'flex-start', gap:4, border:'0px solid red'}}>
+            <Box sx={{display:'flex', flexDirection:'column', width:{xs:'90vw',sm:'80vw',md:'45vw', lg:'45vw', xl:'35vw'}, alignItems:'flex-start', gap:4, border:'0px solid red', order:{xs:2,md:1}}}>
                 <Typography variant="h4">Add your details</Typography>
-                <Box sx={{display:'flex', flexDirection:'row', gap:2}}>
-                    <TextField label='Firstname*' name="firstName" value={formData.firstName} onChange={handleChange} error={!!formErrors.firstName} helperText={formErrors.firstName}size="small" sx={{'& .MuiOutlinedInput-root':{'& fieldset':{borderColor:'black'}}}}/>
-                    <TextField label='Lastname*' name="lastName" value={formData.lastName} onChange={handleChange} error={!!formErrors.lastName} helperText={formErrors.lastName} size="small" sx={{'& .MuiOutlinedInput-root':{'& fieldset':{borderColor:'black'}}}}/>
+                <Box sx={{display:'flex', flexDirection:{xs:'column',sm:'row'}, gap:{xs:4,sm:2}, width:'100%'}}>
+                    <TextField label='Firstname*' name="firstName" value={formData.firstName} onChange={handleChange} error={!!formErrors.firstName} helperText={formErrors.firstName}size="small" fullWidth sx={{'& .MuiOutlinedInput-root':{'& fieldset':{borderColor:'black'}}}}/>
+                    <TextField label='Lastname*' name="lastName" value={formData.lastName} onChange={handleChange} error={!!formErrors.lastName} helperText={formErrors.lastName} size="small" fullWidth sx={{'& .MuiOutlinedInput-root':{'& fieldset':{borderColor:'black'}}}}/>
                 </Box>
                 <TextField label='Email*' name="email" value={formData.email} onChange={handleChange} error={!!formErrors.email} helperText={formErrors.email} size="small" fullWidth sx={{'& .MuiOutlinedInput-root':{'& fieldset':{borderColor:'black'}}}}/>
                 <TextField label='Phone number*' name="phone" value={formData.phone} onChange={handleChange} error={!!formErrors.phone} helperText={formErrors.phone} size="small" fullWidth sx={{'& .MuiOutlinedInput-root':{'& fieldset':{borderColor:'black'}}}}/>
@@ -184,15 +184,15 @@ function EventDetailBox({id, datetime}){
     },[]);
     
     if(eventDetails===undefined){
-        return <div style={{display:'flex', justifyContent:'center', alignItems:'center', height:'20vh'}}>
+        return <Box sx={{display:'flex', justifyContent:'center', alignItems:'center', height:'20vh', order:{xs:1, md:2}}}>
         <CircularProgress sx={{color:'black'}}/>
-      </div>
+      </Box>
     }
 
     let formattedDatetime = ''+(datetime.slice(0,2))+' '+(monthNames[(parseInt(datetime.slice(2,4)))-1])+' '+datetime.slice(4,8)+', '+ datetime.slice(8,10)+':'+datetime.slice(10,12)+' - '+datetime.slice(12,14)+':'+datetime.slice(14,16);
 
     return (
-        <Box sx={{display:'flex', flexDirection:'column', p:2, width:'20vw', border:'1px solid black'}}>
+        <Box sx={{display:'flex', flexDirection:'column', p:2, width:{xs:'70vw',sm:'40vw',md:'20vw'}, border:'1px solid black', order:{xs:1, md:2}}}>
             <Typography variant="h6">{eventDetails.eventName} @ Lumina Vista</Typography>
             <Divider sx={{my:2}}/>
             <Typography fontSize={'15px'}>{formattedDatetime}</Typography>
