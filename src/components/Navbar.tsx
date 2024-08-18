@@ -39,11 +39,21 @@ export default function Navbar(){
     return (
         <>
             <Box sx={{display:{ xs: 'none', md: 'flex' }, height:'20px', flexDirection:'row', justifyContent:'flex-end', alignItems:'center', gap: 5, py:1, pr: 8}}>
-                <Instagram/>
-                <Facebook/>
-                <X/>
-                <LinkedIn/>
-                <YouTube/>
+                <IconButton onClick={()=>{window.open('https://www.instagram.com/lumina_vista_mentorship?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', '_blank')}} sx={{color:'black'}}>
+                    <Instagram/>
+                </IconButton>
+                <IconButton onClick={()=>{window.open('https://www.facebook.com/profile.php?id=61564007084893&mibextid=LQQJ4d', '_blank')}} sx={{color:'black'}}>
+                    <Facebook/>
+                </IconButton>
+                <IconButton onClick={()=>{window.open('https://www.x.com/', '_blank')}} sx={{color:'black'}}>
+                    <X/>
+                </IconButton>
+                <IconButton onClick={()=>{window.open('https://www.linkedin.com/company/lumina-vista-mentorship-career-counselling/', '_blank')}} sx={{color:'black'}}>
+                    <LinkedIn/>
+                </IconButton>
+                <IconButton onClick={()=>{window.open('https://www.youtube.com/', '_blank')}} sx={{color:'black'}}>
+                    <YouTube/>
+                </IconButton>
                 <Typography component={'a'} onClick={()=>{window.location.href='https://www.lvmentor.com/news-and-articles'}} sx={{cursor:'pointer'}}>News and articles</Typography>
                 <Typography component={'a'} onClick={()=>{navigate('/')}} sx={{cursor:'pointer'}}>Events</Typography>                   
             </Box>
