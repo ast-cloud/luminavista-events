@@ -25,12 +25,12 @@ export default function Footer(){
                             {servicesOpen?<ExpandLess sx={{color:'white'}}/>:<ExpandMore sx={{color:'white'}}/>}
                         </Box>
                         <Collapse in={servicesOpen}>
-                            <Typography color='white' fontSize='14px' onClick={function(){window.location.href=('https://www.lvmentor.com/study-in-australia')}}>&nbsp;Study in Australia</Typography>
-                            <Typography color='white' fontSize='14px' onClick={function(){window.location.href=('https://www.lvmentor.com/migrate-to-australia')}}>&nbsp;Migrate to Australia</Typography>
-                            <Typography color='white' fontSize='14px' onClick={function(){window.location.href=('https://www.lvmentor.com/job-ready-programs')}}>&nbsp;Job ready programs</Typography>
-                            <Typography color='white' fontSize='14px' onClick={function(){window.location.href=('https://www.lvmentor.com/career-counselling')}}>&nbsp;Career counselling</Typography>
-                            <Typography color='white' fontSize='14px' onClick={function(){window.location.href=('https://www.lvmentor.com/mentorship')}}>&nbsp;Mentorship</Typography>
-                            <Typography color='white' fontSize='14px' onClick={function(){window.location.href=('https://www.lvmentor.com/internship')}}>&nbsp;Internship</Typography>
+                            <Typography color='white' fontSize='14px' sx={{cursor:'pointer'}} onClick={function(){window.location.href=('https://www.lvmentor.com/study-in-australia')}}>&nbsp;Study in Australia</Typography>
+                            <Typography color='white' fontSize='14px' sx={{cursor:'pointer'}} onClick={function(){window.location.href=('https://www.lvmentor.com/migrate-to-australia')}}>&nbsp;Migrate to Australia</Typography>
+                            <Typography color='white' fontSize='14px' sx={{cursor:'pointer'}} onClick={function(){window.location.href=('https://www.lvmentor.com/job-ready-programs')}}>&nbsp;Job ready programs</Typography>
+                            <Typography color='white' fontSize='14px' sx={{cursor:'pointer'}} onClick={function(){window.location.href=('https://www.lvmentor.com/career-counselling')}}>&nbsp;Career counselling</Typography>
+                            <Typography color='white' fontSize='14px' sx={{cursor:'pointer'}} onClick={function(){window.location.href=('https://www.lvmentor.com/mentorship')}}>&nbsp;Mentorship</Typography>
+                            <Typography color='white' fontSize='14px' sx={{cursor:'pointer'}} onClick={function(){window.location.href=('https://www.lvmentor.com/internship')}}>&nbsp;Internship</Typography>
                         </Collapse>
                         <Box onClick={()=>{setFaqsOpen(!faqsOpen)}} sx={{display:'flex', flexDirection:'row', cursor:'pointer', border:'0px solid red', justifyContent:'space-between'}}>
                             <Typography color='white'>FAQs</Typography>
@@ -74,10 +74,10 @@ export default function Footer(){
                 {/* </Grid>
                 <Grid item> */}
                     <Box sx={{display:'flex', flexDirection:'column'}}>
-                        <Typography color='white' mb='12px' fontSize='20px'>CONTACT</Typography>
+                        <Typography color='white' mb='12px' fontSize='20px' sx={{cursor:'pointer'}} onClick={()=>{window.location.href=('https://www.lvmentor.com/contact')}}>CONTACT</Typography>
                         <Typography color='white'>info@lvmentor.com</Typography>
                         <Typography color='white'>Tel:1300941827</Typography>
-                        <Typography color='white'>Australia | India</Typography>
+                        <Typography color='white' sx={{cursor:'pointer'}} onClick={()=>{window.location.href=('https://www.lvmentor.com/contact')}}>Australia | India</Typography>
                     </Box>
                 </Grid>
             </Grid>
