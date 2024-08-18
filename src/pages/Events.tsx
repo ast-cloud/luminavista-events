@@ -34,9 +34,9 @@ export default function Events(){
 
 function EventsSection(){
     return (
-        <Box sx={{display:'flex', flexDirection:'column', alignItems:'center', pl:{md:5, lg:4}, pr:{md:2,lg:4}, pt:4}}>
+        <Box sx={{display:'flex', flexDirection:'column', alignItems:'start', width:'90vw', ml:{md:5, lg:4}, mr:{md:2,lg:4}, pt:4, border:'0px solid black'}}>
             <Box sx={{display:'flex', flexDirection:{xs:'column', lg:'row'}, width:{xs:'auto',lg:'auto'}, gap:2}}>
-                <Card sx={{display:'flex', flexDirection:'column', gap:{xl:4}, width:{xs:'auto', lg:'50%'}, borderRadius:'16px', pt:2, px:4, boxShadow:0}}>
+                <Card sx={{display:'flex', flexDirection:'column', gap:{xl:4}, width:{xs:'auto', lg:'50%'}, borderRadius:'16px', pt:2, mx:0, boxShadow:0}}>
                     <Typography variant="h2" color={'#265D6B'} pb={2} fontSize={{xs:'32px',sm:'45px',lg:'65px'}}>Events</Typography>
                     <Typography pb={4} fontSize={{xl:'20px'}}>Explore our Events to discover exciting opportunities to enhance your career journey. From insightful seminars to hands-on workshops, stay updated on events designed to boost your skills, network with industry professionals, and achieve your goals. Join us and be a part of our vibrant community!</Typography>
                     
