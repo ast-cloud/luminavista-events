@@ -63,7 +63,7 @@ export default function Navbar(){
                 <Grid item border={'0px solid red'} xs={6}>
                     <Box sx={{display:'flex', flexDirection:'row', alignItems:'center'}}>
                         <Avatar src='/lvlogo.webp' sx={{height:'70px', width:'70px'}}/>
-                        <Box sx={{display:'flex', flexDirection:'column', justifyContent:'center', ml:2}}>
+                        <Box sx={{display:'flex', flexDirection:'column', justifyContent:'center', ml:2, cursor:'pointer'}} onClick={function(){window.location.href=('https://www.lvmentor.com/')}}>
                             <Typography color={'white'} noWrap fontSize={{xs:15, sm:20}} sx={{fontWeight:'bold', mb:0, pb:0}}>LUMINA VISTA</Typography>
                             <Box sx={{display:'flex', flexDirection:{xs:'column', sm:'row'}}}>
                                 <Typography color={'white'} noWrap fontSize={{xs:10, sm:15}} sx={{fontWeight:'bold', mt:0, pt:0}} >Illuminating Futures, &nbsp;</Typography>
