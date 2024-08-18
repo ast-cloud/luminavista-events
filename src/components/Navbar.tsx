@@ -64,7 +64,7 @@ export default function Navbar(){
                     <Box sx={{display:'flex', flexDirection:'row', alignItems:'center'}}>
                         <Avatar src='/lvlogo.webp' sx={{height:'70px', width:'70px'}}/>
                         <Box sx={{display:'flex', flexDirection:'column', justifyContent:'center', ml:2}}>
-                            <Typography color={'white'} noWrap fontSize={{xs:15, sm:20}} sx={{fontWeight:'bold', mb:0, pb:0}}>Lumina Vista</Typography>
+                            <Typography color={'white'} noWrap fontSize={{xs:15, sm:20}} sx={{fontWeight:'bold', mb:0, pb:0}}>LUMINA VISTA</Typography>
                             <Box sx={{display:'flex', flexDirection:{xs:'column', sm:'row'}}}>
                                 <Typography color={'white'} noWrap fontSize={{xs:10, sm:15}} sx={{fontWeight:'bold', mt:0, pt:0}} >Illuminating Futures, &nbsp;</Typography>
                                 <Typography color={'white'} noWrap fontSize={{xs:10, sm:15}} sx={{fontWeight:'bold', mt:0, pt:0}} >Empowering Journeys</Typography>
