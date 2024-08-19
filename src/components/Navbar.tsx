@@ -38,34 +38,36 @@ export default function Navbar(){
 
     return (
         <>
-            <Box sx={{display:{ xs: 'none', md: 'flex' }, height:'20px', flexDirection:'row', justifyContent:'flex-end', alignItems:'center', gap: 5, py:1, pr: 8}}>
-                <IconButton onClick={()=>{window.open('https://www.instagram.com/lumina_vista_mentorship?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', '_blank')}} sx={{color:'black'}}>
-                    <Instagram/>
-                </IconButton>
-                <IconButton onClick={()=>{window.open('https://www.facebook.com/profile.php?id=61564007084893&mibextid=LQQJ4d', '_blank')}} sx={{color:'black'}}>
-                    <Facebook/>
-                </IconButton>
-                <IconButton onClick={()=>{window.open('https://www.x.com/', '_blank')}} sx={{color:'black'}}>
-                    <X/>
-                </IconButton>
-                <IconButton onClick={()=>{window.open('https://www.linkedin.com/company/lumina-vista-mentorship-career-counselling/', '_blank')}} sx={{color:'black'}}>
-                    <LinkedIn/>
-                </IconButton>
-                <IconButton onClick={()=>{window.open('https://www.youtube.com/', '_blank')}} sx={{color:'black'}}>
-                    <YouTube/>
-                </IconButton>
-                <Typography component={'a'} onClick={()=>{window.location.href='https://www.lvmentor.com/news-and-articles'}} sx={{cursor:'pointer'}}>News and articles</Typography>
-                <Typography component={'a'} onClick={()=>{navigate('/')}} sx={{cursor:'pointer'}}>Events</Typography>                   
+            <Box sx={{display:{ xs: 'none', md: 'flex' }, height:'24.5px', flexDirection:'row', justifyContent:'flex-end', alignItems:'center', gap: 5, py:1, pr: 8}}>
+                <Box sx={{display:'flex', flexDirection:'row', gap:2}}>
+                    <IconButton onClick={()=>{window.open('https://www.instagram.com/lumina_vista_mentorship?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', '_blank')}} sx={{color:'black'}}>
+                        <Instagram/>
+                    </IconButton>
+                    <IconButton onClick={()=>{window.open('https://www.facebook.com/profile.php?id=61564007084893&mibextid=LQQJ4d', '_blank')}} sx={{color:'black'}}>
+                        <Facebook/>
+                    </IconButton>
+                    <IconButton onClick={()=>{window.open('https://www.x.com/', '_blank')}} sx={{color:'black'}}>
+                        <X/>
+                    </IconButton>
+                    <IconButton onClick={()=>{window.open('https://www.linkedin.com/company/lumina-vista-mentorship-career-counselling/', '_blank')}} sx={{color:'black'}}>
+                        <LinkedIn/>
+                    </IconButton>
+                    <IconButton onClick={()=>{window.open('https://www.youtube.com/', '_blank')}} sx={{color:'black'}}>
+                        <YouTube/>
+                    </IconButton>
+                </Box>
+                <Typography component={'a'} fontSize={17} onClick={()=>{window.location.href='https://www.lvmentor.com/news-and-articles'}} sx={{cursor:'pointer'}}>News & articles</Typography>
+                <Typography component={'a'} fontSize={17} onClick={()=>{navigate('/')}} sx={{cursor:'pointer'}}>Events</Typography>                   
             </Box>
 
-            <Grid container sx={{border:'0px solid black', height:'80px', justifyContent:'space-between', alignItems:'center', backgroundColor:'#265D6B', px:{xs:2, sm:4, md:8}, py:1}}>
+            <Grid container sx={{border:'0px solid black', height:'90px', justifyContent:'space-between', alignItems:'center', backgroundColor:'#265D6B', px:{xs:2, sm:4, md:8}, py:1}}>
 
                 <Grid item border={'0px solid red'} xs={6}>
                     <Box sx={{display:'flex', flexDirection:'row', alignItems:'center'}}>
                         <Avatar src='/lvlogo.webp' sx={{height:'70px', width:'70px'}}/>
                         <Box sx={{display:'flex', flexDirection:'column', justifyContent:'center', ml:2, cursor:'pointer'}} onClick={function(){window.location.href=('https://www.lvmentor.com/')}}>
-                            <Typography color={'white'} noWrap fontSize={{xs:15, sm:20}} sx={{fontWeight:'bold', mb:0, pb:0}}>LUMINA VISTA</Typography>
-                            <Box sx={{display:'flex', flexDirection:{xs:'column', sm:'row'}}}>
+                            <Typography color={'white'} noWrap fontSize={{xs:15, sm:20}} sx={{fontWeight:'bold', mb:'-2px', pb:0}}>LUMINA VISTA</Typography>
+                            <Box sx={{display:'flex', flexDirection:{xs:'column', sm:'row'}, mt:'-4px', pt:0}}>
                                 <Typography color={'white'} noWrap fontSize={{xs:10, sm:15}} sx={{fontWeight:'bold', mt:0, pt:0}} >Illuminating Futures, &nbsp;</Typography>
                                 <Typography color={'white'} noWrap fontSize={{xs:10, sm:15}} sx={{fontWeight:'bold', mt:0, pt:0}} >Empowering Journeys</Typography>
                             </Box>
@@ -75,26 +77,14 @@ export default function Navbar(){
                     </Box>
                 </Grid>
 
-                <Grid item container xs={6} justifyContent='end' sx={{ display: { xs: 'none', md: 'flex' } }}>
-                    <Button sx={{textTransform:'none', fontSize:15, fontWeight:'normal', color:'white', '&:hover':{color:'#aeefc5'}}} onClick={function(){window.location.href=('https://www.lvmentor.com/')}}>Home</Button>
-
-                    <Button id='services-btn' sx={{textTransform:'none', fontSize:15, fontWeight:'normal', color:'white', '&:hover':{color:'#aeefc5'}}} onClick={function(){window.location.href=('https://www.lvmentor.com/services')}} >Services</Button>
-                    {/* <Menu open={serviceMenuOpen} anchorEl={anchorEl}>
-                        <MenuItem>Study in Australia</MenuItem>
-                        <MenuItem>Migrate to Australia</MenuItem>
-                    </Menu> */}
-                    
-                    <Button sx={{textTransform:'none', fontSize:15, fontWeight:'normal', color:'white', '&:hover':{color:'#aeefc5'}}} onClick={function(){window.location.href=('https://www.lvmentor.com/faq')}} onMouseEnter={(event)=>{
-                        setAnchorEl(event.currentTarget);
-                        
-                    }}>FAQ</Button>
-                    <Menu open={false} anchorEl={anchorEl}>
-                        <MenuItem>Study in Australia</MenuItem>
-                        <MenuItem>Migrate to Australia</MenuItem>
-                    </Menu>
-
-                    <Button sx={{textTransform:'none', fontSize:15, fontWeight:'normal', color:'white', '&:hover':{color:'#aeefc5'}}} onClick={function(){window.location.href=('https://www.lvmentor.com/about')}}>About</Button>
-                    <Button sx={{textTransform:'none', fontSize:15, fontWeight:'normal', color:'white', '&:hover':{color:'#aeefc5'}}} onClick={function(){window.location.href=('https://www.lvmentor.com/contact')}}>Contact Us</Button>
+                <Grid item container xs={6} gap={1.5} justifyContent='end' sx={{ display: { xs: 'none', md: 'flex' } }}>
+                    <Button sx={{textTransform:'none', fontSize:17, fontWeight:'normal', color:'white', '&:hover':{color:'#aeefc5'}}} onClick={function(){window.location.href=('https://www.lvmentor.com/')}}>Home</Button>
+                    <Button id='services-btn' sx={{textTransform:'none', fontSize:17, fontWeight:'normal', color:'white', '&:hover':{color:'#aeefc5'}}} onClick={function(){window.location.href=('https://www.lvmentor.com/services')}}>Services</Button>                  
+                    <Button sx={{textTransform:'none', fontSize:17, fontWeight:'normal', color:'white', '&:hover':{color:'#aeefc5'}}} onClick={function(){window.location.href=('https://www.lvmentor.com/faq')}} onMouseEnter={(event)=>{
+                        setAnchorEl(event.currentTarget);  
+                    }}>FAQs</Button>
+                    <Button sx={{textTransform:'none', fontSize:17, fontWeight:'normal', color:'white', '&:hover':{color:'#aeefc5'}}} onClick={function(){window.location.href=('https://www.lvmentor.com/about')}}>About</Button>
+                    <Button sx={{textTransform:'none', fontSize:17, fontWeight:'normal', color:'white', '&:hover':{color:'#aeefc5'}}} onClick={function(){window.location.href=('https://www.lvmentor.com/contact')}}>Contact Us</Button>
                 </Grid>
 
                 <Grid item container xs={6} sm={4} justifyContent='flex-end' sx={{display: {xs: 'flex', md: 'none'}}}>
