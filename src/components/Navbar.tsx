@@ -1,6 +1,5 @@
 import {Button, Typography, Grid, IconButton, Menu, MenuItem, Box, Avatar, Divider} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Instagram, Facebook, X, LinkedIn, YouTube } from '@mui/icons-material';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -41,19 +40,19 @@ export default function Navbar(){
             <Box sx={{display:{ xs: 'none', md: 'flex' }, height:'24.5px', flexDirection:'row', justifyContent:'flex-end', alignItems:'center', gap: 5, py:1, pr: 8}}>
                 <Box sx={{display:'flex', flexDirection:'row', gap:2}}>
                     <IconButton onClick={()=>{window.open('https://www.instagram.com/lumina_vista_mentorship?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', '_blank')}} sx={{color:'black'}}>
-                        <Instagram/>
+                        <Box component={'img'} src='/Instagram_logo.webp' sx={{height:'28px', width:'28px'}}/>
                     </IconButton>
                     <IconButton onClick={()=>{window.open('https://www.facebook.com/profile.php?id=61564007084893&mibextid=LQQJ4d', '_blank')}} sx={{color:'black'}}>
-                        <Facebook/>
+                        <Box component={'img'} src='/Facebook_logo.webp' sx={{height:'28px', width:'28px'}}/>
                     </IconButton>
                     <IconButton onClick={()=>{window.open('https://www.x.com/', '_blank')}} sx={{color:'black'}}>
-                        <X/>
+                        <Box component={'img'} src='/x_logo.webp' sx={{height:'28px', width:'28px'}}/>
                     </IconButton>
                     <IconButton onClick={()=>{window.open('https://www.linkedin.com/company/lumina-vista-mentorship-career-counselling/', '_blank')}} sx={{color:'black'}}>
-                        <LinkedIn/>
+                        <Box component={'img'} src='/linkedin_logo.webp' sx={{height:'28px', width:'28px'}}/>
                     </IconButton>
                     <IconButton onClick={()=>{window.open('https://www.youtube.com/', '_blank')}} sx={{color:'black'}}>
-                        <YouTube/>
+                        <Box component={'img'} src='/youtube_logo.webp' sx={{height:'28px', width:'28px'}}/>
                     </IconButton>
                 </Box>
                 <Typography component={'a'} fontSize={17} onClick={()=>{window.location.href='https://www.lvmentor.com/news-and-articles'}} sx={{cursor:'pointer'}}>News & articles</Typography>
@@ -64,7 +63,7 @@ export default function Navbar(){
 
                 <Grid item border={'0px solid red'} xs={6}>
                     <Box sx={{display:'flex', flexDirection:'row', alignItems:'center'}}>
-                        <Avatar src='/lvlogo.webp' sx={{height:'70px', width:'70px'}}/>
+                        <Avatar src='/lvlogo.webp' sx={{height:'72.94px', width:'72.94px'}}/>
                         <Box sx={{display:'flex', flexDirection:'column', justifyContent:'center', ml:2, cursor:'pointer'}} onClick={function(){window.location.href=('https://www.lvmentor.com/')}}>
                             <Typography color={'white'} noWrap fontSize={{xs:15, sm:20}} sx={{fontWeight:'bold', mb:'-2px', pb:0}}>LUMINA VISTA</Typography>
                             <Box sx={{display:'flex', flexDirection:{xs:'column', sm:'row'}, mt:'-4px', pt:0}}>
